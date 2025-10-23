@@ -41,6 +41,6 @@
     "@rbxts/ripple": "^0.9.3",
     "@rbxts/services": "^1.5.5",
     "@rbxts/tool_pack": "^2.1.10",
-    "@rbxts/tutorial-ui-highlight": "^0.1.0"
+    "@rbxts/tutorial-ui-highlight": "^0.1.1"
   }
 }

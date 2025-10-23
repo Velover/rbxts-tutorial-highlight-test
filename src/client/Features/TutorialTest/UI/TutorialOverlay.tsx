@@ -1,13 +1,14 @@
-import React from "@rbxts/react";
 import { useFlameworkDependency } from "@rbxts/flamework-react-utils";
+import React from "@rbxts/react";
 import { TutorialUiHightlight } from "@rbxts/tutorial-ui-highlight";
+import { usePxBinding } from "client/Core/Hooks/usePx";
 import { TutorialTestController } from "../Controllers/TutorialTestController";
-import { TutorialSteps } from "../Resources/TutorialSteps";
 
 export function TutorialOverlay() {
 	const tutorialController = useFlameworkDependency<TutorialTestController>();
 	const isTutorialActive = tutorialController.useIsTutorialActiveAtom();
 	const currentStep = tutorialController.useCurrentStepAtom();
+	const px_binding = usePxBinding();
 
 	// Use the official hooks from the tutorial package
 	const currentTutorialStep = TutorialUiHightlight.useCurrentTutorialStep();
@@ -30,6 +31,7 @@ export function TutorialOverlay() {
 
 	return (
 		<screengui ResetOnSpawn={false} ZIndexBehavior={Enum.ZIndexBehavior.Sibling}>
+			<uiscale Scale={px_binding} />
 			{/* Tutorial Control Panel */}
 			<frame
 				Size={UDim2.fromOffset(400, 120)}

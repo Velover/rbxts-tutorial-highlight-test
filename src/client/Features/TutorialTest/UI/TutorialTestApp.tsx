@@ -1,16 +1,19 @@
 import React from "@rbxts/react";
 import { HighlightGui } from "@rbxts/tutorial-ui-highlight";
+import { usePxBinding } from "client/Core/Hooks/usePx";
+import { InventoryMenu } from "./InventoryMenu";
 import { MainMenuButtons } from "./MainMenuButtons";
 import { SettingsMenu } from "./SettingsMenu";
-import { InventoryMenu } from "./InventoryMenu";
-import { TutorialOverlay } from "./TutorialOverlay";
 import { TutorialControls } from "./TutorialControls";
+import { TutorialOverlay } from "./TutorialOverlay";
 
 export function TutorialTestApp() {
+	const px_binding = usePxBinding();
 	return (
 		<>
 			{/* Main UI Components */}
 			<screengui ResetOnSpawn={false}>
+				<uiscale Scale={px_binding} />
 				{/* Background */}
 				<frame
 					Size={UDim2.fromScale(1, 1)}
